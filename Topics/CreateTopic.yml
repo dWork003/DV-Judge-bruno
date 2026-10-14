@@ -1,7 +1,7 @@
 info:
   name: CreateTopic
   type: http
-  seq: 2
+  seq: 1
 
 http:
   method: POST
@@ -14,7 +14,10 @@ http:
     data: |-
       {
         "title": "会議に5分遅刻した",
-        "description": "電車の遅延が理由"
+        "description": "電車の遅延が理由",
+        "positiveLabel": "OK",
+        "negativeLabel": "NG",
+        "deadlineAt": "2026-12-31T18:00:00+09:00"
       }
   auth: inherit
 
