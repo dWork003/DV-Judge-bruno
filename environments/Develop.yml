@@ -1,0 +1,10 @@
+name: Develop
+variables:
+  - name: baseURL
+    value: http://localhost:8000
+    description: ""
+  - name: userEmployeeId
+    value: "11206"
+    description: ""
+  - secret: true
+    name: userPassword

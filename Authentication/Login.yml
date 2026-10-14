@@ -1,0 +1,62 @@
+info:
+  name: Login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseURL}}/api/login"
+  body:
+    type: form-urlencoded
+    data:
+      - name: employeeId
+        value: "{{userEmployeeId}}"
+      - name: password
+        value: "{{userPassword}}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
+
+examples:
+  - name: 200 OK
+    request:
+      url: "{{baseURL}}/api/login"
+      method: POST
+      body:
+        type: form-urlencoded
+        data:
+          - name: employeeId
+            value: "{{userEmployeeId}}"
+          - name: password
+            value: "{{userPassword}}"
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: jpn28896.discojpn.local:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.3.21
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Tue, 04 Aug 2026 08:50:54 GMT
+        - name: content-type
+          value: application/json
+        - name: vary
+          value: Origin
+        - name: set-cookie
+          value: token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vanBuMjg4OTYuZGlzY29qcG4ubG9jYWw6ODAwMC9hcGkvbG9naW4iLCJpYXQiOjE3ODU4MzM0NTQsImV4cCI6MTc4NTgzNzA1NCwibmJmIjoxNzg1ODMzNDU0LCJqdGkiOiI4dlVJRGdWekM5UW1LbkdNIiwic3ViIjoiMTEyMDYiLCJwcnYiOiJkMjdhYjcyYjllOWUwMTgwYWNlMzBhMGUyYzE1ZmQyNzlkNjA4ZjgyIn0.ck-Bdtd-cRDRJHkgKVS7OU-sUlRq7zHuCGuVZsf3JXg; expires=Thu, 03 Sep 2026 08:50:54 GMT; Max-Age=2592000; path=/; samesite=lax
+      body:
+        type: json
+        data: |-
+          {
+            "message": "Logged in"
+          }
