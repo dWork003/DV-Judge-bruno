@@ -26,5 +26,11 @@ DV-Judge のバックエンド API を手動で試すための [Bruno](https://w
 | `Authentication` | `Login`    | `POST /api/login` ログイン             |
 |                  | `Profile`  | `GET /api/profile` ログイン中のユーザー |
 |                  | `Logout`   | `GET /api/logout` ログアウト           |
+| `Topics`         | `ListTopics`  | `GET /api/topics` 議題の一覧        |
+|                  | `CreateTopic` | `POST /api/topics` 議題の投稿       |
+| `Admin` (管理者のみ) | `ListAdmins` | `GET /api/admin/admins` 管理者の一覧 |
+|                  | `AddAdmin`    | `POST /api/admin/admins` 管理者の追加 |
+|                  | `RemoveAdmin` | `DELETE /api/admin/admins/{社員番号}` 管理者から外す |
+|                  | `SearchEmployees` | `GET /api/admin/employees?keyword=` 社員検索 |
 
 API を追加したら、対応するリクエストをここに追加し、レスポンス例 (`examples`) も保存してください。

@@ -1,0 +1,26 @@
+info:
+  name: CreateTopic
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseURL}}/api/topics"
+  headers:
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "会議に5分遅刻した",
+        "description": "電車の遅延が理由"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
