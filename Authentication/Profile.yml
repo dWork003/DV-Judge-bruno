@@ -1,0 +1,84 @@
+info:
+  name: Profile
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseURL}}/api/profile"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
+
+examples:
+  - name: 401 Unauthorized
+    request:
+      url: "{{baseURL}}/api/profile"
+      method: GET
+    response:
+      status: 401
+      statusText: Unauthorized
+      headers:
+        - name: host
+          value: jpn28896.discojpn.local:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.3.21
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Tue, 04 Aug 2026 08:52:31 GMT
+        - name: content-type
+          value: application/json
+        - name: vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+            "message": "Unauthenticated."
+          }
+  - name: 200 OK
+    request:
+      url: "{{baseURL}}/api/profile"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: date
+          value: Wed, 14 Oct 2026 09:22:40 GMT, Wed, 14 Oct 2026 09:22:40 GMT
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.0.30
+        - name: cache-control
+          value: no-cache, private
+        - name: content-type
+          value: application/json
+        - name: x-ratelimit-limit
+          value: "60"
+        - name: x-ratelimit-remaining
+          value: "57"
+        - name: vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+            "data": {
+              "id": "11206",
+              "domain": "DISCOJPN.LOCAL",
+              "name": "礒邊　竣",
+              "departmentId": "H8010040",
+              "departmentName": "サポート本部情報システム部開発グループ開発４チーム"
+            }
+          }
