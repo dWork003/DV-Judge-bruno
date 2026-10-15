@@ -1,0 +1,23 @@
+info:
+  name: MyJudgedTopics
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{baseURL}}/api/me/judged-topics?page=1"
+  params:
+    - name: page
+      value: "1"
+      type: query
+  headers:
+    - name: Accept
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

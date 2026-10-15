@@ -1,0 +1,19 @@
+info:
+  name: CloseTopic
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{baseURL}}/api/topics/1/close"
+  headers:
+    - name: Accept
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
