@@ -26,7 +26,8 @@ DV-Judge のバックエンド API を手動で試すための [Bruno](https://w
 | `Authentication` | `Login`    | `POST /api/login` ログイン             |
 |                  | `Profile`  | `GET /api/profile` ログイン中のユーザー |
 |                  | `Logout`   | `GET /api/logout` ログアウト           |
-| `Topics`         | `CreateTopic`    | `POST /api/topics` 議題の投稿 |
+| `Topics`         | `ListTopics`     | `GET /api/topics?keyword=` 全ての議題 (検索) |
+|                  | `CreateTopic`    | `POST /api/topics` 議題の投稿 |
 |                  | `NextTopic`      | `GET /api/topics/next` 未判定の議題をランダムに 1 件 |
 |                  | `GetTopic`       | `GET /api/topics/{id}` 議題の詳細 (結果は見られる人だけ) |
 |                  | `CloseTopic`     | `POST /api/topics/{id}/close` 締め切る (投稿者のみ) |
